@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Paste to Markdown</title>
+        <title>Convert to Markdown</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -31,7 +31,7 @@
                 overflow: hidden;
             }
             #output {
-                border: none;
+                /* border: none; */
                 background: transparent;
                 /* font-family: Consolas, "Liberation Mono", Courier, monospace; */
                 font-size: 13px;
@@ -51,20 +51,31 @@
         <!-- <div class="container"> -->
         <div class="wrapper">
             <section id="info">
-                <h1>Paste to Markdown</h1>
+                <h1>Convert to Markdown</h1>
                 <h2>Instructions</h2>
                 <ol>
-                    <li>Find the text to convert to Markdown (<i>e.g.</i>, in another browser tab)</li>
-                    <li>Copy it to the clipboard (<code>Ctrl+C</code>, or <code>&#8984;+C</code> on Mac)</li>
-                    <li>Paste it into this window (<code>Ctrl+V</code>, or <code>&#8984;+V</code> on Mac)</li>
-                    <li>The converted Markdown will appear!</li>
+                    <li>Find the section to convert to Markdown</li>
+                    <li>Copy it to the clipboard (<code>Ctrl+C</code>)</li>
+                    <li>Paste it into this window (<code>Ctrl+V</code>)</li>
+                    <li>The converted Markdown will appear</li>
                 </ol>
                 <!-- <p>The conversion is carried out by <a href="https://github.com/domchristie/to-markdown">to-markdown</a>, a Markdown converter written in JavaScript and running locally in the browser.</p> -->
             </section>
             <div contenteditable="true" id="pastebin"></div>
             <section class="hidden" id="wrapper">
                 <textarea id="output"></textarea>
+                <button class="btn btn--secondary" onclick="reset()">Reset</button>
             </section>
+
+            
         </div>
     </body>
+
+
+    <script>
+    function reset() {
+            info.classList.remove('hidden');
+            wrapper.classList.add('hidden');
+    }
+    </script>
 </html>
